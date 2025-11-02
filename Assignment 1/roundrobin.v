@@ -8,7 +8,7 @@ module roundrobin(input clk, reset, input [3:0] req, output reg[3:0] gnt);
 		  gnt <= 4'b0000;
 		  end
         else begin state<= nextstate;
-		  case (nextstate)
+		  case (state)
                 s1: gnt <= req[0] ? 4'b0001 : 4'b0000;
                 s2: gnt <= req[1] ? 4'b0010 : 4'b0000;
                 s3: gnt <= req[2] ? 4'b0100 : 4'b0000;
